@@ -19,6 +19,7 @@ def receive_file_size(sck: socket.socket):
 
 def receive_file(sck: socket.socket, filename):
     # Leer primero del socket la cantidad de bytes que se recibirán del archivo.
+
     filesize = receive_file_size(sck)
     # Abrir un nuevo archivo en donde guardar los datos recibidos.
     with open(filename, "wb") as f:
@@ -47,6 +48,7 @@ i=1
 while i <= n_conn:
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.connect((HOST, PORT))
+
     th = threading.Thread(target=receive_file, args=(s, f"Cliente{i}-Prueba-{n_conn}.txt",))
     
     print(f"Recibiendo archivo en el cliente{i}...")

@@ -52,7 +52,7 @@ class ThreadedClient(threading.Thread):
 
     def run(self):
         #print(str(self.numcliente) + "\n")
-        logger.info(f' Cliente #{self.numcliente}: A la espera de que los demás clientes se conecten. Restan {barrier.n_waiting}') 
+        logger.info(f' Cliente #{self.numcliente}: A la espera de que los demás clientes se conecten. Van {barrier.n_waiting}') 
         barrier.wait()
 
         ################################################
@@ -76,7 +76,7 @@ class ThreadedClient(threading.Thread):
             received_bytes += len(chunk)
         filesize = struct.unpack(fmt, stream)[0]
         
-        logger.info(f' Cliente #{self.numcliente}: Se recibió el tamaño real ({filesize}) del archivo que se recibirá.') 
+        logger.info(f' Cliente #{self.numcliente}: Se recibió el tamaño real ({filesize}B) del archivo que se recibirá.') 
         return filesize
 
     def receive_file(self, sck: socket.socket, filename):
@@ -88,14 +88,15 @@ class ThreadedClient(threading.Thread):
         
         
         #filename_server = sck.recv(1024).decode("utf-8")
-        filename_server = "hoa"
-        logger.info(f' Cliente #{self.numcliente}: Se recibió nombre del archivo que se recibirá es {filename_server}.') 
+        ### Recibe el mensaje de solicitud de confirmación del servidor
+        mensaje_conf = sck.recv(1024).decode("utf-8")
         
         logger.info(f' Cliente #{self.numcliente}: Se recibió el mensaje de solicitud de confirmación.') 
+        filename_server = mensaje_conf.split(" ")[-1]
+        logger.info(f' Cliente #{self.numcliente}: Se recibió nombre del archivo que se recibirá, el cual es {filename_server}.') 
         #sck.sendall("{0}".format("0").encode())  
         
-        ### Recibe el mensaje de solicitud de confirmación del servidor
-        sck.recv(1024)
+      
         
         ### Enviar la confirmación de listo
         sck.sendall("{0}".format("1").encode())    

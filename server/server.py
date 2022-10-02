@@ -43,7 +43,7 @@ def on_new_client(clientsocket,addr, num_cliente):
     while True:
         
         logger_s.info(f' Server-Cliente #{num_cliente}:' + 
-                     'Inicio del manejador de la conexión, la dirección asociada es {addr}.')
+                     f'Inicio del manejador de la conexión, la dirección y puerto asociados son {addr}.')
         #msg = clientsocket.recv(1024)
         
    
@@ -53,7 +53,7 @@ def on_new_client(clientsocket,addr, num_cliente):
         filename = filename_0 if str(tipo_archivo ) == '0' else filename_1
         
         logger_s.info(f' Server-Cliente #{num_cliente}: ' 
-                     +  f'El tipo de archivo solicitado por el cliente es {filename} ({tipo_archivo}) cuyo tamaño es de {os.path.getsize(filename)} .')
+                     +  f'El tipo de archivo solicitado por el cliente es {filename} ({tipo_archivo}) cuyo tamaño es de {os.path.getsize(filename)}B .')
         
         
              
@@ -67,7 +67,7 @@ def on_new_client(clientsocket,addr, num_cliente):
         #clientsocket.send(bytes(msg, 'utf-8'))
         #break
         #clientsocket.recv(1024)
-        clientsocket.sendall(b"Envie un 1 si se encuentra listo para la recepcion del archivo")
+        clientsocket.sendall("Envie un 1 si se encuentra listo para la recepcion del archivo {0}".format(filename).encode())   
            
         logger_s.info(f' Server-Cliente #{num_cliente}: Se le envió la solicitud de confirmación al cliente. En espera.')
        #print(" #{0} \n".format(num_cliente))

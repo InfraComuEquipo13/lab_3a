@@ -1,0 +1,124 @@
+2022-10-02 17:45:00.108 INFO      AppCliente: Iniciando la aplicación de clientes con el servidor DESKTOP-J1GSMA7 en el puerto 50000.
+2022-10-02 17:45:00.109 INFO      AppCliente: Iniciando la conexión del cliente 1.
+2022-10-02 17:45:00.109 INFO      Cliente #1: Estableciendo conexión con el servidor.
+2022-10-02 17:45:00.109 INFO      Cliente #1: Conexión con el servidor exitosa en el puerto 50000.
+2022-10-02 17:45:00.110 INFO      Cliente #1: A la espera de que los demás clientes se conecten. Restan 0
+2022-10-02 17:45:00.110 INFO      AppCliente: Iniciando la conexión del cliente 2.
+2022-10-02 17:45:00.110 INFO      Cliente #2: Estableciendo conexión con el servidor.
+2022-10-02 17:45:00.111 INFO      Cliente #2: Conexión con el servidor exitosa en el puerto 50000.
+2022-10-02 17:45:00.111 INFO      Cliente #2: A la espera de que los demás clientes se conecten. Restan 1
+2022-10-02 17:45:00.111 INFO      AppCliente: Iniciando la conexión del cliente 3.
+2022-10-02 17:45:00.111 INFO      Cliente #3: Estableciendo conexión con el servidor.
+2022-10-02 17:45:00.112 INFO      Cliente #3: Conexión con el servidor exitosa en el puerto 50000.
+2022-10-02 17:45:00.112 INFO      Cliente #3: A la espera de que los demás clientes se conecten. Restan 2
+2022-10-02 17:45:00.112 INFO      AppCliente: Iniciando la conexión del cliente 4.
+2022-10-02 17:45:00.112 INFO      Cliente #4: Estableciendo conexión con el servidor.
+2022-10-02 17:45:00.112 INFO      Cliente #4: Conexión con el servidor exitosa en el puerto 50000.
+2022-10-02 17:45:00.113 INFO      Cliente #4: A la espera de que los demás clientes se conecten. Restan 3
+2022-10-02 17:45:00.113 INFO      AppCliente: Iniciando la conexión del cliente 5.
+2022-10-02 17:45:00.113 INFO      Cliente #5: Estableciendo conexión con el servidor.
+2022-10-02 17:45:00.113 INFO      Cliente #5: Conexión con el servidor exitosa en el puerto 50000.
+2022-10-02 17:45:00.113 INFO      Cliente #5: A la espera de que los demás clientes se conecten. Restan 4
+2022-10-02 17:45:00.114 INFO      Cliente #1: Se le envió al servidor el tipo de archivo que se desea recibir.
+2022-10-02 17:45:00.114 INFO      Cliente #1: Se recibió el mensaje de solicitud de confirmación.
+2022-10-02 17:45:00.114 INFO      Cliente #2: Se le envió al servidor el tipo de archivo que se desea recibir.
+2022-10-02 17:45:00.114 INFO      Cliente #1: Enviada la confirmación de listo para iniciar la transferencia.
+2022-10-02 17:45:00.114 INFO      Cliente #3: Se le envió al servidor el tipo de archivo que se desea recibir.
+2022-10-02 17:45:00.114 INFO      Cliente #2: Se recibió el mensaje de solicitud de confirmación.
+2022-10-02 17:45:00.114 INFO      Cliente #4: Se le envió al servidor el tipo de archivo que se desea recibir.
+2022-10-02 17:45:00.115 INFO      Cliente #1: Se recibió el tamaño real (111085193) del archivo que se recibirá.
+2022-10-02 17:45:00.115 INFO      Cliente #3: Se recibió el mensaje de solicitud de confirmación.
+2022-10-02 17:45:00.115 INFO      Cliente #5: Se le envió al servidor el tipo de archivo que se desea recibir.
+2022-10-02 17:45:00.115 INFO      Cliente #2: Enviada la confirmación de listo para iniciar la transferencia.
+2022-10-02 17:45:00.115 INFO      Cliente #4: Se recibió el mensaje de solicitud de confirmación.
+2022-10-02 17:45:00.115 INFO      Cliente #1: Inicio de la transferencia del archivo.
+2022-10-02 17:45:00.117 INFO      Cliente #3: Enviada la confirmación de listo para iniciar la transferencia.
+2022-10-02 17:45:00.117 INFO      Cliente #5: Se recibió el mensaje de solicitud de confirmación.
+2022-10-02 17:45:00.117 INFO      Cliente #4: Enviada la confirmación de listo para iniciar la transferencia.
+2022-10-02 17:45:00.117 INFO      Cliente #2: Se recibió el tamaño real (111085193) del archivo que se recibirá.
+2022-10-02 17:45:00.117 INFO      Cliente #5: Enviada la confirmación de listo para iniciar la transferencia.
+2022-10-02 17:45:00.118 INFO      Cliente #2: Inicio de la transferencia del archivo.
+2022-10-02 17:45:00.118 INFO      Cliente #3: Se recibió el tamaño real (111085193) del archivo que se recibirá.
+2022-10-02 17:45:00.118 INFO      Cliente #5: Se recibió el tamaño real (111085193) del archivo que se recibirá.
+2022-10-02 17:45:00.118 INFO      Cliente #4: Se recibió el tamaño real (111085193) del archivo que se recibirá.
+2022-10-02 17:45:00.118 INFO      Cliente #3: Inicio de la transferencia del archivo.
+2022-10-02 17:45:00.118 INFO      Cliente #5: Inicio de la transferencia del archivo.
+2022-10-02 17:45:00.118 INFO      Cliente #4: Inicio de la transferencia del archivo.
+2022-10-02 17:45:03.791 INFO      Cliente #3: El archivo fue recibido con exito.
+2022-10-02 17:45:03.831 INFO      Cliente #4: El archivo fue recibido con exito.
+2022-10-02 17:45:03.864 INFO      Cliente #5: El archivo fue recibido con exito.
+2022-10-02 17:45:03.870 INFO      Cliente #2: El archivo fue recibido con exito.
+2022-10-02 17:45:03.952 INFO      Cliente #1: El archivo fue recibido con exito.
+2022-10-02 17:45:04.915 INFO      Cliente #4: Se recibió el codigo hash del archivo calculado por el servidor. Hashcode: "ec77e77d5745b8d79a3d0f3b71a691f31d56ea3f".
+2022-10-02 17:45:04.915 INFO      Cliente #2: Se recibió el codigo hash del archivo calculado por el servidor. Hashcode: "ec77e77d5745b8d79a3d0f3b71a691f31d56ea3f".
+2022-10-02 17:45:04.916 INFO      Cliente #3: Se recibió el codigo hash del archivo calculado por el servidor. Hashcode: "ec77e77d5745b8d79a3d0f3b71a691f31d56ea3f".
+2022-10-02 17:45:04.917 INFO      Cliente #5: Se recibió el codigo hash del archivo calculado por el servidor. Hashcode: "ec77e77d5745b8d79a3d0f3b71a691f31d56ea3f".
+2022-10-02 17:45:04.963 INFO      Cliente #1: Se recibió el codigo hash del archivo calculado por el servidor. Hashcode: "ec77e77d5745b8d79a3d0f3b71a691f31d56ea3f".
+2022-10-02 17:45:05.996 INFO      Cliente #3: Se calculó el codigo hash del archivo recibido. Hashcode: "ec77e77d5745b8d79a3d0f3b71a691f31d56ea3f".
+2022-10-02 17:45:05.996 INFO      Cliente #3: La integridad del archivo se conservó, los hashcode entre servidor y cliente coinciden.
+2022-10-02 17:45:06.003 INFO      Cliente #4: Se calculó el codigo hash del archivo recibido. Hashcode: "ec77e77d5745b8d79a3d0f3b71a691f31d56ea3f".
+2022-10-02 17:45:06.003 INFO      Cliente #4: La integridad del archivo se conservó, los hashcode entre servidor y cliente coinciden.
+2022-10-02 17:45:06.028 INFO      Cliente #2: Se calculó el codigo hash del archivo recibido. Hashcode: "ec77e77d5745b8d79a3d0f3b71a691f31d56ea3f".
+2022-10-02 17:45:06.028 INFO      Cliente #2: La integridad del archivo se conservó, los hashcode entre servidor y cliente coinciden.
+2022-10-02 17:45:06.030 INFO      Cliente #5: Se calculó el codigo hash del archivo recibido. Hashcode: "ec77e77d5745b8d79a3d0f3b71a691f31d56ea3f".
+2022-10-02 17:45:06.030 INFO      Cliente #5: La integridad del archivo se conservó, los hashcode entre servidor y cliente coinciden.
+2022-10-02 17:45:06.038 INFO      Cliente #1: Se calculó el codigo hash del archivo recibido. Hashcode: "ec77e77d5745b8d79a3d0f3b71a691f31d56ea3f".
+2022-10-02 17:45:06.038 INFO      Cliente #1: La integridad del archivo se conservó, los hashcode entre servidor y cliente coinciden.
+2022-10-02 17:47:29.787 INFO      AppCliente: Iniciando la aplicación de clientes con el servidor DESKTOP-J1GSMA7 en el puerto 50000.
+2022-10-02 17:47:29.787 INFO      AppCliente: Iniciando la conexión del cliente 1.
+2022-10-02 17:47:29.787 INFO      Cliente #1: Estableciendo conexión con el servidor.
+2022-10-02 17:47:29.788 INFO      Cliente #1: Conexión con el servidor exitosa en el puerto 50000.
+2022-10-02 17:47:29.788 INFO      Cliente #1: A la espera de que los demás clientes se conecten. Restan 0
+2022-10-02 17:47:29.788 INFO      AppCliente: Iniciando la conexión del cliente 2.
+2022-10-02 17:47:29.788 INFO      Cliente #2: Estableciendo conexión con el servidor.
+2022-10-02 17:47:29.789 INFO      Cliente #2: Conexión con el servidor exitosa en el puerto 50000.
+2022-10-02 17:47:29.789 INFO      Cliente #2: A la espera de que los demás clientes se conecten. Restan 1
+2022-10-02 17:47:29.789 INFO      AppCliente: Iniciando la conexión del cliente 3.
+2022-10-02 17:47:29.789 INFO      Cliente #3: Estableciendo conexión con el servidor.
+2022-10-02 17:47:29.790 INFO      Cliente #3: Conexión con el servidor exitosa en el puerto 50000.
+2022-10-02 17:47:29.790 INFO      Cliente #3: A la espera de que los demás clientes se conecten. Restan 2
+2022-10-02 17:47:29.790 INFO      AppCliente: Iniciando la conexión del cliente 4.
+2022-10-02 17:47:29.790 INFO      Cliente #4: Estableciendo conexión con el servidor.
+2022-10-02 17:47:29.790 INFO      Cliente #4: Conexión con el servidor exitosa en el puerto 50000.
+2022-10-02 17:47:29.790 INFO      Cliente #4: A la espera de que los demás clientes se conecten. Restan 3
+2022-10-02 17:47:29.790 INFO      AppCliente: Iniciando la conexión del cliente 5.
+2022-10-02 17:47:29.791 INFO      Cliente #5: Estableciendo conexión con el servidor.
+2022-10-02 17:47:29.791 INFO      Cliente #5: Conexión con el servidor exitosa en el puerto 50000.
+2022-10-02 17:47:29.791 INFO      Cliente #5: A la espera de que los demás clientes se conecten. Restan 4
+2022-10-02 17:47:29.791 INFO      Cliente #1: Se le envió al servidor el tipo de archivo que se desea recibir.
+2022-10-02 17:47:29.792 INFO      Cliente #1: Se recibió el mensaje de solicitud de confirmación.
+2022-10-02 17:47:29.792 INFO      Cliente #2: Se le envió al servidor el tipo de archivo que se desea recibir.
+2022-10-02 17:47:29.792 INFO      Cliente #1: Enviada la confirmación de listo para iniciar la transferencia.
+2022-10-02 17:47:29.792 INFO      Cliente #3: Se le envió al servidor el tipo de archivo que se desea recibir.
+2022-10-02 17:47:29.792 INFO      Cliente #2: Se recibió el mensaje de solicitud de confirmación.
+2022-10-02 17:47:29.792 INFO      Cliente #4: Se le envió al servidor el tipo de archivo que se desea recibir.
+2022-10-02 17:47:29.792 INFO      Cliente #3: Se recibió el mensaje de solicitud de confirmación.
+2022-10-02 17:47:29.792 INFO      Cliente #2: Enviada la confirmación de listo para iniciar la transferencia.
+2022-10-02 17:47:29.792 INFO      Cliente #1: Se recibió el tamaño real (249224393) del archivo que se recibirá.
+2022-10-02 17:47:29.792 INFO      Cliente #5: Se le envió al servidor el tipo de archivo que se desea recibir.
+2022-10-02 17:47:29.793 INFO      Cliente #4: Se recibió el mensaje de solicitud de confirmación.
+2022-10-02 17:47:29.793 INFO      Cliente #3: Enviada la confirmación de listo para iniciar la transferencia.
+2022-10-02 17:47:29.793 INFO      Cliente #2: Se recibió el tamaño real (249224393) del archivo que se recibirá.
+2022-10-02 17:47:29.793 INFO      Cliente #1: Inicio de la transferencia del archivo.
+2022-10-02 17:47:29.793 INFO      Cliente #5: Se recibió el mensaje de solicitud de confirmación.
+2022-10-02 17:47:29.793 INFO      Cliente #4: Enviada la confirmación de listo para iniciar la transferencia.
+2022-10-02 17:47:29.793 INFO      Cliente #2: Inicio de la transferencia del archivo.
+2022-10-02 17:47:29.794 INFO      Cliente #5: Enviada la confirmación de listo para iniciar la transferencia.
+2022-10-02 17:47:29.794 INFO      Cliente #3: Se recibió el tamaño real (249224393) del archivo que se recibirá.
+2022-10-02 17:47:29.794 INFO      Cliente #3: Inicio de la transferencia del archivo.
+2022-10-02 17:47:29.794 INFO      Cliente #4: Se recibió el tamaño real (249224393) del archivo que se recibirá.
+2022-10-02 17:47:29.794 INFO      Cliente #5: Se recibió el tamaño real (249224393) del archivo que se recibirá.
+2022-10-02 17:47:29.794 INFO      Cliente #4: Inicio de la transferencia del archivo.
+2022-10-02 17:47:29.794 INFO      Cliente #5: Inicio de la transferencia del archivo.
+2022-10-02 17:47:38.188 INFO      Cliente #3: El archivo fue recibido con exito.
+2022-10-02 17:47:38.305 INFO      Cliente #2: El archivo fue recibido con exito.
+2022-10-02 17:47:38.398 INFO      Cliente #1: El archivo fue recibido con exito.
+2022-10-02 17:47:38.618 INFO      Cliente #5: El archivo fue recibido con exito.
+2022-10-02 17:47:38.784 INFO      Cliente #4: El archivo fue recibido con exito.
+2022-10-02 17:47:39.977 INFO      Cliente #3: Se recibió el codigo hash del archivo calculado por el servidor. Hashcode: "90261a5e2d3987e955d0fe3a18e3472a22a35032".
+2022-10-02 17:47:40.269 INFO      Cliente #3: Se calculó el codigo hash del archivo recibido. Hashcode: "90261a5e2d3987e955d0fe3a18e3472a22a35032".
+2022-10-02 17:47:40.269 INFO      Cliente #3: La integridad del archivo se conservó, los hashcode entre servidor y cliente coinciden.
+2022-10-02 17:47:40.487 INFO      Cliente #2: Se recibió el codigo hash del archivo calculado por el servidor. Hashcode: "90261a5e2d3987e955d0fe3a18e3472a22a35032".
+2022-10-02 17:47:40.575 INFO      Cliente #1: Se recibió el codigo hash del archivo calculado por el servidor. Hashcode: "90261a5e2d3987e955d0fe3a18e3472a22a35032".
+2022-10-02 17:47:40.691 INFO      Cliente #5: Se recibió el codigo hash del archivo calculado por el servidor. Hashcode: "90261a5e2d3987e955d0fe3a18e3472a22a35032".
+2022-10-02 17:47:40.706 INFO      Cliente #4: Se recibió el codigo hash del archivo calculado por el servidor. Hashcode: "90261a5e2d3987e955d0fe3a18e3472a22a35032".

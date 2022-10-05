@@ -11,24 +11,6 @@ import logging
 import datetime
 import os
 
-barrier = None
-n_conn = int(input('Ingrese el número de conexiones: '))
-tipo_archivo = int(input('Ingrese "0" si desea recibir un archivo de 100MB y "1" si desea uno de 250MB: '))
-#n_conn = 2
-#tipo_archivo = "1"
-
-# Creación del logger
-## Fecha de la prueba
-now = datetime.datetime.now()
-#os.mkdir('Logs')
-
-logging.basicConfig(filename=f'Logs\prueba{n_conn}-{now.year}-{now.month}-{now.day}-{now.hour}-{now.minute}-{now.second}-log.txt', 
-                             encoding='utf-8',
-                             format='%(asctime)s.%(msecs)03d %(levelname)-8s %(message)s',
-                             level=logging.INFO,
-                             datefmt='%Y-%m-%d %H:%M:%S')
-
-logger = logging.getLogger("client_logger")
 
 class ThreadedClient(threading.Thread):
     ### CONSTRUCTOR DE LA CLASE 
@@ -119,7 +101,7 @@ class ThreadedClient(threading.Thread):
                         f.write(chunk)
                         received_bytes += len(chunk)
                 time_end = round(time.time()-time_start, 5)
-            logger.info(f' Cliente #{self.numcliente}: El archivo fue recibido con exito. El tiempo de transferencia fue: {time_end} segundos.') 
+            logger.info(f' Cliente #{self.numcliente}: El archivo fue recibido con exito. El tiempo de transferencia fue: {time_end} segundos. El tamaño final del archivo recibido es de {os.path.getsize(filename)}') 
         except:
             logger.info(f' Cliente #{self.numcliente}: La transferencia no fue exitosa.') 
         
@@ -137,6 +119,8 @@ class ThreadedClient(threading.Thread):
         if(hashcode_server == hashcode_cliente ):
             logger.info(f' Cliente #{self.numcliente}: La integridad del archivo se conservó, los hashcode entre servidor y cliente coinciden.')
         
+        else:
+            logger.info(f' Cliente #{self.numcliente}: La integridad del archivo no conservó.')
         #barrier.wait()
     
     def hash_file(self, filename):
@@ -160,14 +144,33 @@ class ThreadedClient(threading.Thread):
        return h.hexdigest()
 
 
+#SERVER_IP = "192.168.9.120"
+barrier = None
+n_conn = int(input('Ingrese el número de conexiones: '))
+tipo_archivo = int(input('Ingrese "0" si desea recibir un archivo de 100MB y "1" si desea uno de 250MB: '))
+#n_conn = 3
+#tipo_archivo = "0"
+
+# Creación del logger
+## Fecha de la prueba
+now = datetime.datetime.now()
+#os.mkdir('Logs')
+
+logging.basicConfig(filename=f'Logs\prueba{n_conn}-{now.year}-{now.month}-{now.day}-{now.hour}-{now.minute}-{now.second}-log.txt', 
+                             encoding='utf-8',
+                             format='%(asctime)s.%(msecs)03d %(levelname)-8s %(message)s',
+                             level=logging.INFO,
+                             datefmt='%Y-%m-%d %H:%M:%S')
+
+logger = logging.getLogger("client_logger")
+
 if __name__ == '__main__':
 
-    #We need one party for each thread we intend to create, five in this place, 
-    #as well as an additional party for the main thread that will also wait for all threads to reach the barrier.
     barrier = threading.Barrier(n_conn+1 )
     
     # Get local machine name
     HOST = socket.gethostname() 
+    #HOST = SERVER_IP
     PORT = 50000       
     logger.info(f' AppCliente: Iniciando la aplicación de clientes con el servidor {HOST} en el puerto {PORT}.') 
     
@@ -183,15 +186,6 @@ if __name__ == '__main__':
     print("Todos las conexiones fueron exitosas, listos para iniciar la recepción del archivo.")
     barrier.wait() ## barrier + 1 
 
-    #barrier = threading.Barrier(n_conn+1 )
     for s in clientes_list:
         
         s.start_receive_file()
-    #barrier.wait()
-    #logger = None
-
-#s.sendall(bytes('Hello, world', 'utf-8'))
-#data = s.recv(1024)
-
-
-#print ('Received', repr(data))

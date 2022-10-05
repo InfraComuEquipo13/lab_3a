@@ -1,6 +1,3 @@
-#!/usr/bin/python           # This is server.py file                                                                                                                                                                           
-
-# importing the hashlib module
 import hashlib
 import os
 import socket
@@ -10,22 +7,7 @@ import logging
 import datetime
 import time
 
-now = datetime.datetime.now()
-## Creación del logger_s
-#logger_s = logging.basicConfig(filename=f'{now.year}-{now.month}-{now.day}-{now.hour}-{now.minute}-{now.second}-log.txt', encoding='utf-8', level=logging.DEBUG)
-logging.basicConfig(filename=f'{now.year}-{now.month}-{now.day}-{now.hour}-{now.minute}-{now.second}-log.txt', 
-                             encoding='utf-8',
-                             format='%(asctime)s.%(msecs)03d %(levelname)-8s %(message)s',
-                             level=logging.INFO,
-                             datefmt='%Y-%m-%d %H:%M:%S')
-#logging.basicConfig(filename='prueba.txt', level=logging.DEBUG)
-logger_s = logging.getLogger("server_logger")
 
-fileprueba = "prueba.tiff"
-filename_0 = "archivo_100mb.zip"
-
-filename_1 = "archivo_250mb.zip"
-filesize = 0
 def send_file(sck: socket.socket, filename):
     # Obtener el tamaño del archivo a enviar.
     filesize = os.path.getsize(filename)
@@ -44,7 +26,6 @@ def on_new_client(clientsocket,addr, num_cliente):
         
         logger_s.info(f' Server-Cliente #{num_cliente}:' + 
                      f'Inicio del manejador de la conexión, la dirección y puerto asociados son {addr}.')
-        #msg = clientsocket.recv(1024)
         
    
         #do some checks and if msg == someWeirdSignal: break:
@@ -59,18 +40,11 @@ def on_new_client(clientsocket,addr, num_cliente):
              
         logger_s.info(f' Server-Cliente #{num_cliente}:' + 
                      'Enviando el nombre del archivo al cliente.')
-        #clientsocket.sendall("{0}".format(filename).encode())     
         
-        #print (addr, ' >>  Tipo de archivo: ', tipo_archivo)
-        #msg = 'SERVER >> '
-        #Maybe some code to compute the last digit of PI, play game or anything else can go here and when you are done.
-        #clientsocket.send(bytes(msg, 'utf-8'))
-        #break
-        #clientsocket.recv(1024)
         clientsocket.sendall("Envie un 1 si se encuentra listo para la recepcion del archivo {0}".format(filename).encode())   
            
         logger_s.info(f' Server-Cliente #{num_cliente}: Se le envió la solicitud de confirmación al cliente. En espera.')
-       #print(" #{0} \n".format(num_cliente))
+
         confirmacion = clientsocket.recv(1024).decode("utf-8")
         if confirmacion == '1': 
             logger_s.info(f' Server-Cliente #{num_cliente}: El cliente ha confirmado que esta listo para recibir el archivo.')  
@@ -88,7 +62,7 @@ def on_new_client(clientsocket,addr, num_cliente):
         hash_code = hash_file(filename)
         clientsocket.sendall(hash_code.encode())
         logger_s.info(f' Server-Cliente #{num_cliente}: El hash del archivo enviado es {hash_code}. Se envió el codigo hash calculado al cliente.')
-        
+        break
       
     clientsocket.close()
 
@@ -115,10 +89,23 @@ def hash_file(filename):
 
 
 
+now = datetime.datetime.now()
+## Creación del logger_s
+logging.basicConfig(filename=f'{now.year}-{now.month}-{now.day}-{now.hour}-{now.minute}-{now.second}-log.txt', 
+                             encoding='utf-8',
+                             format='%(asctime)s.%(msecs)03d %(levelname)-8s %(message)s',
+                             level=logging.INFO,
+                             datefmt='%Y-%m-%d %H:%M:%S')
+logger_s = logging.getLogger("server_logger")
 
+filename_0 = "archivo_100mb.zip"
+
+filename_1 = "archivo_250mb.zip"
+filesize = 0
     
 s = socket.socket()         # Create a socket object
 host = socket.gethostname() # Get local machine name
+#host = "192.168.9.120"
 port = 50000                # Reserve a port for your service.
 logger_s.info(f' Server: El servidor {host} en el puerto {port} ha sido inicializado.')
 logger_s.info(' Server: Esperando por clientes.')
@@ -128,16 +115,12 @@ s.bind((host, port))        # Bind to the port
 s.listen(5)                 # Now wait for client connection.
 
 num_cliente_actual = 1
-#print ('Got connection from', addr)
 while True:
-    c, addr = s.accept()     # Establish connection with client.
+    c, addr = s.accept()     # Establece la conexión con el cliente.
     logger_s.info(f' Server: Se ha recibido y aceptado la petición de conexión del cliente {num_cliente_actual}.')
     th = threading.Thread(target=on_new_client, args=(c,addr, num_cliente_actual))
     
     logger_s.info(f' Server: Se le ha asignado un hilo al cliente {num_cliente_actual} para el manejo de sus peticiones.')
     th.start()   
     num_cliente_actual+=1
-    #Note it's (addr,) not (addr) because second parameter is a tuple
-    #Edit: (c,addr)
-    #that's how you pass arguments to functions when creating new threads using thread module.
 s.close()
